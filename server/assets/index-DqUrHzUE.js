@@ -1,5 +1,5 @@
-import { Q as reactExports, I as jsxRuntimeExports, a as React } from "./server-CkbOSe0U.js";
-import { h as heroSatay } from "./router-BuzakpUb.js";
+import { Q as reactExports, I as jsxRuntimeExports, a as React } from "./server-CrdUeVM2.js";
+import { h as heroSatay } from "./router-DH7vi-Tu.js";
 import "node:async_hooks";
 import "node:stream/web";
 import "node:stream";
@@ -3714,9 +3714,9 @@ function useScrollToTop() {
   };
   return { isVisible, scrollToTop };
 }
-const satayPlate = "/assets/satay-plate-CufrPrX5.jpg";
-const grillMaster = "/assets/grill-master-gWwqG_KJ.jpg";
-const satayVariety = "/assets/satay-variety-CC5bX54p.jpg";
+const satayPlate = "/satesapipakkempleng/assets/satay-plate-CufrPrX5.jpg";
+const grillMaster = "/satesapipakkempleng/assets/grill-master-gWwqG_KJ.jpg";
+const satayVariety = "/satesapipakkempleng/assets/satay-variety-CC5bX54p.jpg";
 function Ornament({
   label
 }) {
