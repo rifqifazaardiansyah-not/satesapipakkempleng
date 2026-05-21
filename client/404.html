@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // Redirect all 404s to the index.html with the path as a query parameter
+      const path = window.location.pathname.replace(/\/$/, '');
+      window.location.replace(
+        window.location.origin +
+        (window.location.pathname.includes('/satesapipakkempleng') 
+          ? '/satesapipakkempleng' 
+          : '') +
+        '/?redirect=' +
+        encodeURIComponent(path)
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
