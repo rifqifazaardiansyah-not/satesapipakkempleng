@@ -2,8 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import {
   Flame, MapPin, Phone, Instagram, Clock, Star, Utensils,
-  Heart, Users, Award, Truck, Sparkles, ChevronRight,
+  Heart, Users, Award, Truck, Sparkles, ChevronRight, ArrowUp,
 } from "lucide-react";
+import { useHideOnScroll } from "@/hooks/use-hide-on-scroll";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import heroSatay from "@/assets/hero-satay.jpg";
 import satayPlate from "@/assets/satay-plate.jpg";
 import grillMaster from "@/assets/grill-master.jpg";
@@ -37,17 +39,20 @@ function Ornament({ label }: { label: string }) {
 }
 
 function Landing() {
+  const isHeaderVisible = useHideOnScroll();
+  const { isVisible: isScrollToTopVisible, scrollToTop } = useScrollToTop();
+
   return (
     <div className="min-h-screen">
       {/* NAV */}
-      <header className="absolute inset-x-0 top-0 z-30">
+      <header className={`absolute inset-x-0 top-0 z-30 transition-transform duration-300 ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
           <a href="#top" className="flex items-center gap-2 text-cream">
             <span className="grid h-10 w-10 place-items-center rounded-full border border-[var(--gold)]/60 bg-charcoal/40 backdrop-blur">
               <Flame className="h-5 w-5 text-[var(--gold)]" />
             </span>
             <div className="leading-tight">
-              <div className="font-display text-lg text-[var(--cream)]">Pak Kempleng</div>
+              <div className="font-display text-lg text-[var(--cream)]">Sate Sapi Pak Kempleng</div>
               <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--gold)]">Est. Ungaran</div>
             </div>
           </a>
@@ -123,7 +128,7 @@ function Landing() {
               className="rounded-lg shadow-warm"
             />
             <div className="absolute -bottom-6 -right-6 hidden rounded-lg border border-[var(--gold)]/40 bg-card p-5 shadow-soft md:block">
-              <div className="font-display text-3xl text-primary">Sejak 1970</div>
+              <div className="font-display text-3xl text-primary">Sejak 1946</div>
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Warung Asli Ungaran</div>
             </div>
           </div>
@@ -362,7 +367,7 @@ function Landing() {
                 <div className="flex gap-4">
                   <MapPin className="mt-1 h-5 w-5 text-[var(--gold)]" />
                   <div>
-                    <div className="font-display text-lg">Cabang Utama</div>
+                    <div className="font-display text-lg">Cabang Utama (Sate Sapi Pak Kempleng 1)</div>
                     <div className="text-sm text-[var(--cream)]/70">Jl. Jenderal Sudirman, Ungaran, Kabupaten Semarang, Jawa Tengah</div>
                   </div>
                 </div>
@@ -370,7 +375,7 @@ function Landing() {
                   <Clock className="mt-1 h-5 w-5 text-[var(--gold)]" />
                   <div>
                     <div className="font-display text-lg">Jam Buka</div>
-                    <div className="text-sm text-[var(--cream)]/70">Setiap hari · 10.00 – 22.00 WIB</div>
+                    <div className="text-sm text-[var(--cream)]/70">Setiap hari · 09.00 – 19.30 WIB</div>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -384,7 +389,7 @@ function Landing() {
                   <Instagram className="mt-1 h-5 w-5 text-[var(--gold)]" />
                   <div>
                     <div className="font-display text-lg">Sosial Media</div>
-                    <div className="text-sm text-[var(--cream)]/70">@satepakkempleng</div>
+                    <div className="text-sm text-[var(--cream)]/70">@satekempleng1</div>
                   </div>
                 </div>
               </div>
@@ -394,7 +399,7 @@ function Landing() {
                   <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer">Chat WhatsApp</a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-[var(--cream)]/30 bg-transparent text-[var(--cream)] hover:bg-[var(--cream)]/10">
-                  <a href="https://maps.google.com" target="_blank" rel="noreferrer">Buka di Google Maps</a>
+                  <a href="https://maps.app.goo.gl/p2j4vBVDrLB2DwBR6" target="_blank" rel="noreferrer">Buka di Google Maps</a>
                 </Button>
               </div>
             </div>
@@ -435,6 +440,17 @@ function Landing() {
       <footer className="border-t border-border bg-[var(--charcoal)] py-10 text-center text-sm text-[var(--cream)]/60">
         © {new Date().getFullYear()} Sate Sapi Pak Kempleng · Ungaran, Jawa Tengah
       </footer>
+
+      {/* SCROLL TO TOP */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-40 grid h-12 w-12 place-items-center rounded-full bg-[var(--gold)] text-[var(--charcoal)] shadow-warm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+          isScrollToTopVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </div>
   );
 }
