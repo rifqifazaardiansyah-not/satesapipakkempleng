@@ -473,7 +473,7 @@ function Landing() {
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="bg-[var(--gold)] text-[var(--charcoal)] hover:bg-[var(--gold)]/90">
-                  <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer">Chat WhatsApp</a>
+                  <a href="https://wa.me/6285641849205" target="_blank" rel="noreferrer">Chat WhatsApp</a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-[var(--cream)]/30 bg-transparent text-[var(--cream)] hover:bg-[var(--cream)]/10">
                   <a href="https://maps.app.goo.gl/p2j4vBVDrLB2DwBR6" target="_blank" rel="noreferrer">Buka di Google Maps</a>
@@ -511,7 +511,7 @@ function Landing() {
               <a href="#kontak">Kunjungi Cabang</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-[var(--cream)]/40 bg-transparent text-[var(--cream)] hover:bg-[var(--cream)]/10">
-              <a href="https://wa.me/6281234567890">Pesan Sekarang</a>
+              <a href="https://wa.me/6285641849205" target="_blank" rel="noreferrer">Pesan Sekarang</a>
             </Button>
           </div>
         </div>
