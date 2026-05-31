@@ -34,6 +34,7 @@
   --color-charcoal: var(--charcoal);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
+  --font-quote: "Lora", Georgia, serif;
 }
 
 :root {
@@ -117,6 +118,7 @@
 
 @layer utilities {
   .font-display { font-family: var(--font-display); }
+  .font-quote { font-family: var(--font-quote); }
   .bg-gradient-warm { background: var(--gradient-warm); }
   .shadow-warm { box-shadow: var(--shadow-warm); }
   .shadow-soft { box-shadow: var(--shadow-soft); }

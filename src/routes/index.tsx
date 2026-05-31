@@ -10,6 +10,11 @@ import heroSatay from "@/assets/hero-satay.jpg";
 import satayPlate from "@/assets/satay-plate.jpg";
 import grillMaster from "@/assets/grill-master.jpg";
 import gulaiSapi from "@/assets/gulai-sapi.jpeg";
+import sate1 from "@/assets/sate1.jpeg";
+import sate3 from "@/assets/sate3.jpeg";
+import sate4 from "@/assets/sate4.jpeg";
+import sopiga from "@/assets/sopiga.jpeg"
+
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -245,7 +250,7 @@ function Landing() {
                 {[
                   // MAKANAN UTAMA
                   { 
-                    img: satayPlate, 
+                    img: sate3, 
                     t: "Sate Sapi", 
                     p: "Rp 85.000", 
                     d: "Daging sapi pilihan, empuk dan kaya rempah dengan bumbu kacang autentik.", 
@@ -259,55 +264,18 @@ function Landing() {
                     category: "Makanan Utama" 
                   },
                   { 
-                    img: heroSatay, 
+                    img: sate4, 
                     t: "Sate Jeroan", 
-                    p: "Rp 20.000", 
+                    p: "Rp 85.000", 
                     d: "Kombinasi sempurna untuk pecinta cita rasa kuat dan berbeda.", 
                     category: "Makanan Utama" 
                   },
-                  // PELENGKAP
                   { 
-                    img: null, 
-                    t: "Nasi", 
-                    p: "Rp 8.000", 
-                    d: "Nasi putih hangat, melengkapi setiap hidangan dengan sempurna.", 
-                    category: "Pelengkap" 
-                  },
-                  { 
-                    img: null, 
-                    t: "Lontong", 
-                    p: "Rp 5.000", 
-                    d: "Lontong tradisional lembut, sajian pelengkap yang gurih dan mengenyangkan.", 
-                    category: "Pelengkap" 
-                  },
-                  // MINUMAN
-                  { 
-                    img: null, 
-                    t: "Es Teh", 
-                    p: "Rp 5.000", 
-                    d: "Teh dingin segar yang menyegarkan, sempurna menemani sate panas.", 
-                    category: "Minuman" 
-                  },
-                  { 
-                    img: null, 
-                    t: "Es Jeruk", 
-                    p: "Rp 6.000", 
-                    d: "Jeruk segar alami yang menyegarkan di siang hari yang panas.", 
-                    category: "Minuman" 
-                  },
-                  { 
-                    img: null, 
-                    t: "Es Beras Kencur", 
-                    p: "Rp 8.000", 
-                    d: "Minuman tradisional dengan rempah kencur, penyegarkan dan menyehatkan.", 
-                    category: "Minuman" 
-                  },
-                  { 
-                    img: null, 
-                    t: "Es Gula Asem", 
-                    p: "Rp 7.000", 
-                    d: "Asem-asem manis dingin, teman istimewa untuk sate sapi Pak Kempleng.", 
-                    category: "Minuman" 
+                    img: sopiga, 
+                    t: "Sop Iga Sapi", 
+                    p: "Rp 40.000", 
+                    d: "Iga sapi pilihan, empuk dan kaya rempah dengan bumbu kacang autentik.", 
+                    category: "Makanan Utama" 
                   },
                 ].map((m) => (
                   <div 
@@ -345,17 +313,12 @@ function Landing() {
                     </div>
                     
                     {/* Content */}
-                    <div className="p-6 flex flex-col h-48">
+                    <div className="p-6 flex flex-col h-38">
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <h3 className="font-display text-lg text-[var(--cream)] leading-tight">{m.t}</h3>
                         <span className="text-sm text-[var(--gold)] font-bold whitespace-nowrap flex-shrink-0">{m.p}</span>
                       </div>
                       <p className="text-xs text-[var(--cream)]/75 leading-relaxed flex-1 mb-4">{m.d}</p>
-                      <div className="border-t border-[var(--cream)]/10 pt-3">
-                        <button className="text-xs uppercase tracking-[0.2em] text-[var(--gold)] hover:text-[var(--gold)]/80 transition font-bold flex items-center gap-1.5">
-                          Pesan <ChevronRight className="h-3 w-3" />
-                        </button>
-                      </div>
                     </div>
                   </div>
                 ))}
@@ -370,9 +333,6 @@ function Landing() {
                 <ChevronRight className="h-3 w-3" />
               </div>
             </div>
-
-            {/* Gradient Fade - Desktop Only */}
-            <div className="hidden md:block pointer-events-none absolute right-0 top-16 bottom-4 w-40 bg-gradient-to-l from-[var(--charcoal)] via-[var(--charcoal)]/80 to-transparent rounded-lg" />
           </div>
         </div>
       </section>
@@ -450,15 +410,15 @@ function Landing() {
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {[
-              { n: "Bu Siti Rahmawati", c: "Semarang", t: "Sejak kecil saya makan sate Pak Kempleng. Rasanya nggak pernah berubah, selalu juara." },
-              { n: "Pak Budi Santoso", c: "Yogyakarta", t: "Setiap lewat Ungaran wajib mampir. Dagingnya empuk, bumbu kacangnya nendang." },
-              { n: "Mas Aditya Pratama", c: "Jakarta", t: "Sate paling otentik yang pernah saya cicipi. Pulang bawa oleh-oleh tiga porsi!" },
+              { n: "Eliza", c: "Google Play Store", t: "Kuliner di Ungaran yg wajib dicobain dan sepertinya bakal repeat order kalau ke Ungaran sih. Sate sapinya enaaak, bumbunya meresap, per tusuk full daging.Gule sapi yg nggak berekspektasi apapun ternyata daging & campurannya empuk, kuahnya aja yg kurang berasa bumbunya.Tempatnya bersih, parkirnya luas, mantab"},
+              { n: "Rider Pratama", c: "Google Play Store", t: "Baru pertama kali nyobain sate Pak Kempleng 1, rasanya manis, dengan ciri khas sate sapi, pelayanan cepat, ramah, tanggap, lokasi strategis ( Pinggir Jalan Raya ) bisa makan bersama 10 orang+"},
+              { n: "Rusman Yatin", c: "Google Play Store", t: "Top Markotop!!!Sate dagingnya enak banget, rasanya otentik bumbu manis gurih meresap, 1 porsi isi 10 tusuk bisa buat sharing. Klo ke Ungaran wajib mampir, highly recommended buat pecinta daging sapi"},
             ].map((t) => (
               <figure key={t.n} className="paper-card flex h-full flex-col p-8">
                 <div className="flex gap-1 text-[var(--gold)]">
                   {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
                 </div>
-                <blockquote className="mt-6 flex-1 font-display text-lg italic leading-relaxed text-foreground">
+                <blockquote className="mt-6 flex-1 font-quote text-lg italic leading-relaxed text-foreground">
                   "{t.t}"
                 </blockquote>
                 <figcaption className="mt-6 border-t border-border pt-4">
@@ -485,7 +445,7 @@ function Landing() {
                   <MapPin className="mt-1 h-5 w-5 text-[var(--gold)]" />
                   <div>
                     <div className="font-display text-lg">Cabang Utama (Sate Sapi Pak Kempleng 1)</div>
-                    <div className="text-sm text-[var(--cream)]/70">Jl. Jenderal Sudirman, Ungaran, Kabupaten Semarang, Jawa Tengah</div>
+                    <div className="text-sm text-[var(--cream)]/70">Jl. Diponegoro No.265, Genuk Timur, Genuk, Kec. Ungaran Barat, Kabupaten Semarang, Jawa Tengah 50512</div>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -499,7 +459,7 @@ function Landing() {
                   <Phone className="mt-1 h-5 w-5 text-[var(--gold)]" />
                   <div>
                     <div className="font-display text-lg">WhatsApp</div>
-                    <div className="text-sm text-[var(--cream)]/70">+62 812 3456 7890</div>
+                    <div className="text-sm text-[var(--cream)]/70">+62 856-4184-9205</div>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -525,7 +485,7 @@ function Landing() {
               {/* Dekorasi sudut gold */}
               <div className="pointer-events-none absolute inset-4 rounded-xl border border-[var(--gold)]/30" />
               <div className="overflow-hidden rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
-                <img src={satayPlate} alt="Sajian sate sapi lengkap" width={1024} height={1024} loading="lazy"
+                <img src={sate3} alt="Sajian sate sapi lengkap" width={1024} height={1024} loading="lazy"
                   className="h-full w-full object-cover" />
               </div>
             </div>
