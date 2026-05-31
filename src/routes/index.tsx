@@ -9,7 +9,7 @@ import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import heroSatay from "@/assets/hero-satay.jpg";
 import satayPlate from "@/assets/satay-plate.jpg";
 import grillMaster from "@/assets/grill-master.jpg";
-import satayVariety from "@/assets/satay-variety.jpg";
+import gulaiSapi from "@/assets/gulai-sapi.jpeg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -222,7 +222,7 @@ function Landing() {
         </div>
       </section>
 
-      {/* MENU */}
+      {/* MENU - HORIZONTAL SCROLLABLE */}
       <section id="menu" className="relative overflow-hidden bg-[var(--charcoal)] py-24 text-[var(--cream)] md:py-32">
         <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-ember)" }} />
         <div className="relative mx-auto max-w-7xl px-6">
@@ -235,27 +235,144 @@ function Landing() {
             <h2 className="font-display text-4xl text-[var(--cream)] md:text-5xl">Sajian Khas dari Dapur Kami</h2>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { img: satayPlate, t: "Sate Sapi", p: "Rp 25.000", d: "Daging sapi pilihan, empuk dan kaya rempah." },
-              { img: satayVariety, t: "Sate Koyor", p: "Rp 22.000", d: "Tekstur lembut khas, favorit pelanggan setia." },
-              { img: heroSatay, t: "Sate Jeroan", p: "Rp 20.000", d: "Kombinasi sempurna untuk pecinta cita rasa kuat." },
-              { img: grillMaster, t: "Pelengkap Nusantara", p: "Rp 10.000", d: "Lontong, gule, dan sambal kacang otentik." },
-            ].map((m) => (
-              <div key={m.t} className="group overflow-hidden rounded-lg border border-[var(--cream)]/10 bg-[var(--charcoal)]/40 backdrop-blur">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img src={m.img} alt={m.t} width={800} height={1000} loading="lazy"
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-baseline justify-between">
-                    <div className="font-display text-xl text-[var(--cream)]">{m.t}</div>
-                    <div className="text-sm text-[var(--gold)]">{m.p}</div>
+          {/* Horizontal Scrollable Container */}
+          <div className="relative mt-16">
+            <div 
+              className="overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-track]:bg-[var(--charcoal)]/40 [&::-webkit-scrollbar-thumb]:bg-[var(--gold)]/40 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[var(--gold)]/60"
+              style={{ scrollBehavior: "smooth" }}
+            >
+              <div className="flex gap-6 pb-4 min-w-min">
+                {[
+                  // MAKANAN UTAMA
+                  { 
+                    img: satayPlate, 
+                    t: "Sate Sapi", 
+                    p: "Rp 85.000", 
+                    d: "Daging sapi pilihan, empuk dan kaya rempah dengan bumbu kacang autentik.", 
+                    category: "Makanan Utama" 
+                  },
+                  { 
+                    img: gulaiSapi, 
+                    t: "Gulai Sapi", 
+                    p: "Rp 40.000", 
+                    d: "Kuah kaya rempah, kelezatan asli yang memikat rasa Jawa.", 
+                    category: "Makanan Utama" 
+                  },
+                  { 
+                    img: heroSatay, 
+                    t: "Sate Jeroan", 
+                    p: "Rp 20.000", 
+                    d: "Kombinasi sempurna untuk pecinta cita rasa kuat dan berbeda.", 
+                    category: "Makanan Utama" 
+                  },
+                  // PELENGKAP
+                  { 
+                    img: null, 
+                    t: "Nasi", 
+                    p: "Rp 8.000", 
+                    d: "Nasi putih hangat, melengkapi setiap hidangan dengan sempurna.", 
+                    category: "Pelengkap" 
+                  },
+                  { 
+                    img: null, 
+                    t: "Lontong", 
+                    p: "Rp 5.000", 
+                    d: "Lontong tradisional lembut, sajian pelengkap yang gurih dan mengenyangkan.", 
+                    category: "Pelengkap" 
+                  },
+                  // MINUMAN
+                  { 
+                    img: null, 
+                    t: "Es Teh", 
+                    p: "Rp 5.000", 
+                    d: "Teh dingin segar yang menyegarkan, sempurna menemani sate panas.", 
+                    category: "Minuman" 
+                  },
+                  { 
+                    img: null, 
+                    t: "Es Jeruk", 
+                    p: "Rp 6.000", 
+                    d: "Jeruk segar alami yang menyegarkan di siang hari yang panas.", 
+                    category: "Minuman" 
+                  },
+                  { 
+                    img: null, 
+                    t: "Es Beras Kencur", 
+                    p: "Rp 8.000", 
+                    d: "Minuman tradisional dengan rempah kencur, penyegarkan dan menyehatkan.", 
+                    category: "Minuman" 
+                  },
+                  { 
+                    img: null, 
+                    t: "Es Gula Asem", 
+                    p: "Rp 7.000", 
+                    d: "Asem-asem manis dingin, teman istimewa untuk sate sapi Pak Kempleng.", 
+                    category: "Minuman" 
+                  },
+                ].map((m) => (
+                  <div 
+                    key={m.t} 
+                    className="flex-shrink-0 w-80 group overflow-hidden rounded-lg border border-[var(--cream)]/10 bg-[var(--charcoal)]/40 backdrop-blur transition-all duration-300 hover:border-[var(--gold)]/30 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+                  >
+                    {/* Image Container */}
+                    <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-[var(--charcoal)]/60 to-[var(--charcoal)]/80">
+                      {m.img ? (
+                        <img 
+                          src={m.img} 
+                          alt={m.t} 
+                          width={500} 
+                          height={625} 
+                          loading="lazy"
+                          className="h-full w-full object-cover transition duration-700 group-hover:scale-105" 
+                        />
+                      ) : (
+                        <div className="h-full w-full flex flex-col items-center justify-center space-y-4">
+                          <div className="w-16 h-16 rounded-full bg-[var(--gold)]/10 flex items-center justify-center">
+                            <Utensils className="h-8 w-8 text-[var(--gold)]/30" />
+                          </div>
+                          <div className="text-center space-y-1">
+                            <p className="text-xs text-[var(--cream)]/50">Gambar Menu</p>
+                            <p className="text-[10px] text-[var(--gold)]/40">Coming Soon</p>
+                          </div>
+                        </div>
+                      )}
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-block rounded-full bg-[var(--gold)]/80 text-[var(--charcoal)] text-[10px] font-bold px-3 py-1.5 uppercase tracking-[0.15em]">
+                          {m.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-6 flex flex-col h-48">
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <h3 className="font-display text-lg text-[var(--cream)] leading-tight">{m.t}</h3>
+                        <span className="text-sm text-[var(--gold)] font-bold whitespace-nowrap flex-shrink-0">{m.p}</span>
+                      </div>
+                      <p className="text-xs text-[var(--cream)]/75 leading-relaxed flex-1 mb-4">{m.d}</p>
+                      <div className="border-t border-[var(--cream)]/10 pt-3">
+                        <button className="text-xs uppercase tracking-[0.2em] text-[var(--gold)] hover:text-[var(--gold)]/80 transition font-bold flex items-center gap-1.5">
+                          Pesan <ChevronRight className="h-3 w-3" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <p className="mt-2 text-sm text-[var(--cream)]/70">{m.d}</p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Scroll Hint untuk Mobile */}
+            <div className="mt-8 flex items-center justify-center md:hidden">
+              <div className="flex items-center gap-2 text-xs text-[var(--cream)]/60 animate-pulse">
+                <ChevronRight className="h-3 w-3" />
+                <span>Geser untuk lihat menu lainnya</span>
+                <ChevronRight className="h-3 w-3" />
+              </div>
+            </div>
+
+            {/* Gradient Fade - Desktop Only */}
+            <div className="hidden md:block pointer-events-none absolute right-0 top-16 bottom-4 w-40 bg-gradient-to-l from-[var(--charcoal)] via-[var(--charcoal)]/80 to-transparent rounded-lg" />
           </div>
         </div>
       </section>
@@ -342,7 +459,7 @@ function Landing() {
                   {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
                 </div>
                 <blockquote className="mt-6 flex-1 font-display text-lg italic leading-relaxed text-foreground">
-                  “{t.c && t.t}”
+                  "{t.t}"
                 </blockquote>
                 <figcaption className="mt-6 border-t border-border pt-4">
                   <div className="font-medium">{t.n}</div>
@@ -404,9 +521,13 @@ function Landing() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg border border-[var(--cream)]/15">
-              <img src={satayPlate} alt="Sajian sate sapi lengkap" width={1024} height={1024} loading="lazy"
-                className="h-full w-full object-cover" />
+            <div className="relative flex items-center justify-center rounded-2xl bg-[var(--charcoal)] p-6 border border-[var(--gold)]/20 shadow-[0_0_60px_rgba(0,0,0,0.6)]">
+              {/* Dekorasi sudut gold */}
+              <div className="pointer-events-none absolute inset-4 rounded-xl border border-[var(--gold)]/30" />
+              <div className="overflow-hidden rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+                <img src={satayPlate} alt="Sajian sate sapi lengkap" width={1024} height={1024} loading="lazy"
+                  className="h-full w-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
@@ -444,9 +565,8 @@ function Landing() {
       {/* SCROLL TO TOP */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-40 grid h-12 w-12 place-items-center rounded-full bg-[var(--gold)] text-[var(--charcoal)] shadow-warm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
-          isScrollToTopVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed bottom-8 right-8 z-40 grid h-12 w-12 place-items-center rounded-full bg-[var(--gold)] text-[var(--charcoal)] shadow-warm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${isScrollToTopVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         aria-label="Scroll to top"
       >
         <ArrowUp className="h-5 w-5" />
