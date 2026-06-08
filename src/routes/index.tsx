@@ -133,7 +133,7 @@ function Landing() {
               className="rounded-lg shadow-warm"
             />
             <div className="absolute -bottom-6 -right-6 hidden rounded-lg border border-[var(--gold)]/40 bg-card p-5 shadow-soft md:block">
-              <div className="font-display text-3xl text-primary">Sejak 1946</div>
+              <div className="font-display text-3xl text-primary">Sejak 1960</div>
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Warung Asli Ungaran</div>
             </div>
           </div>
@@ -214,7 +214,7 @@ function Landing() {
             {[
               { n: "01", t: "Resep Turun-Temurun", d: "Diwariskan tanpa pernah diubah, sejak generasi pertama." },
               { n: "02", t: "Daging Premium Empuk", d: "Pemilihan dan pemotongan teliti agar lumer di mulut." },
-              { n: "03", t: "Rasa Otentik", d: "Bumbu kacang dengan kekayaan rasa khas Jawa." },
+              { n: "03", t: "Rasa Manis Otentik", d: "Bumbu kacang dengan kekayaan rasa khas Jawa." },
               { n: "04", t: "Reputasi Legendaris", d: "Nama yang dibicarakan turun-temurun di Ungaran." },
             ].map((u) => (
               <div key={u.n} className="group relative overflow-hidden rounded-lg border border-border bg-card p-8 transition hover:border-[var(--gold)]">
@@ -384,7 +384,7 @@ function Landing() {
               {[
                 { icon: MapPin, t: "Google Maps", d: "Mudah ditemukan di setiap cabang." },
                 { icon: Truck, t: "Pesan Antar Online", d: "GoFood, GrabFood, ShopeeFood." },
-                { icon: Instagram, t: "Instagram & TikTok", d: "Cerita dan momen tiap hari." },
+                { icon: Instagram, t: "Instagram", d: "Cerita dan momen tiap hari." },
                 { icon: Sparkles, t: "Branding Kuliner", d: "Identitas kuat yang dipercaya." },
               ].map((d) => (
                 <div key={d.t} className="paper-card p-6">
